@@ -19,9 +19,9 @@ PLOS Computational Biology 18 (6), 2022
 
 This simulator consists of three libraries as follows:
 
-1. neurosimulator: This library is the main module for dynamics of a neural network. It consists of codes for initializing a network, running the dynamics on that network, visualizing the output, and performing statistical analysis on the dynamics.
-2. populations: This library consists of predefined populations to be used for neurosimulator. There exist single population and multi-population networks of striatum with inferred connectivity profiles from experimental literature.
-3. plasticity: Here online plasticity rules can be defined to be added to the network dynamics. A predefined anti-Hebbian rule is incorporated. With an online plasticity rule, connectivity weights of the network change depending on neural network activity such as pre-post neural firing rates.
+1. **neurosimulator.py**: This library is the main module for dynamics of a neural network. It consists of codes for initializing a network, running the dynamics on that network, visualizing the output, and performing statistical analysis on the dynamics.
+2. **populations.py**: This library consists of predefined populations to be used for neurosimulator. There exist single population and multi-population networks of striatum with inferred connectivity profiles from experimental literature.
+3. **plasticity.py**: Here online plasticity rules can be defined to be added to the network dynamics. A predefined anti-Hebbian rule is incorporated. With an online plasticity rule, connectivity weights of the network change depending on neural network activity such as pre-post neural firing rates.
 
 ## Sample code
 
