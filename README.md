@@ -31,9 +31,9 @@ import neurosimulator as ns
 from populations import Striatum
 
 ns.initNetwork(Striatum)
-(monitorSpiketime, monitorSpike, monitorV) = rundynamics(endtime=1000, monitor_ind=[0,1,2,3])
+(SpikeTime, Spike, V) = rundynamics(endtime=1000, monitor_ind=[0,1,2,3])
 ```
-The above code imports **neurosimulator** and from **populations** the striatum predefined population, consisting of three different cell types (FSI, dSPN, iSPN). Then it initializes the network in the simulator using **initNetwork()**. Using **rundynamics()** the simulator runs the network for duration of endtime in ms and monitors the selected neurons (with indices monitor_ind) and outputs their spike times (monitorSpiketime), binary spike arrays in time (monitorSpike), and membrane potentials (monitorV).
+The above code imports **neurosimulator** and from **populations** the striatum predefined population, consisting of three different cell types (FSI, dSPN, iSPN). Then it initializes the network in the simulator using **initNetwork()**. Using **rundynamics()** the simulator runs the network for duration of endtime in ms and monitors the selected neurons (with indices monitor_ind) and outputs their spike times (SpikeTime), binary spike arrays in time (Spike), and membrane potentials (V).
 
 To visualize the dynamics of the network, there are several visualization functions in neurosimulator. A built-in function can run and visulalize the dynamics at the same time using:
 ```python
