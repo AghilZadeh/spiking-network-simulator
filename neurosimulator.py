@@ -1,3 +1,6 @@
+####################################### spiking neural netwrok ##########################################
+
+
 import numpy as np
 import seaborn as sns
 import networkx as nx
