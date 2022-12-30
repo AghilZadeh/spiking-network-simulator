@@ -1,5 +1,4 @@
 # spiking neural network simulator
----
 
 ## Introduction
 
