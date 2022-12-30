@@ -23,8 +23,33 @@ a network can be defined and run using few lines of code as simple as below:
 ```python
 import neurosimulator as ns
 from populations import Striatum
+
 ns.initNetwork(Striatum)
+(monitorSpiketime, monitorSpike, monitorV) = rundynamics(endtime=1000, monitor_ind=[0,1,2,3])
+```
+The above code imports **neurosimulator** and from **populations** the striatum predefined population, consisting of three different cell types (FSI, dSPN, iSPN). Then it initializes the network in the simulator using **initNetwork()**. Using **rundynamics()** the simulator runs the network for duration of endtime in ms and monitors the selected neurons (with indices monitor_ind) and outputs their spike times (monitorSpiketime), binary spike arrays in time (monitorSpike), and membrane potentials (monitorV).
+
+To visualize the dynamics of the network, there are several visualization functions in neurosimulator. A built-in function can run and visulalize the dynamics at the same time using:
+```python
 ns.runplot(1000, ns.monitorind([10,10,10]));
 ```
-The above code imports **neurosimulator** and from **populations** the striatum predefined population, consisting of three different cell types (FSI, dSPN, iSPN). Then it initializes the network in the simulator using **initNetwork()**. Using **runplot()**, the simulator runs the network for 1000 ms, chooses 10 randomly selected neurons from each three populations by **monitorind([10,10,10])** and plots the rasterplot of spike activity and average population activity across time. 
+Here, using **runplot()**, the simulator runs the network for 1000 ms, chooses 10 randomly selected neurons from each three populations by **monitorind([10,10,10])** and plots the rasterplot of spike activity and average population activity across time. 
+
+One can turn on or off placticity rules at any stage of simulation. Here is a sample code on how plasticity can be incorporated in the model
+```python
+import neurosimulator as ns
+from populations import Striatum
+ns.initNetwork(Striatum)
+ns.runplot(1000, ns.monitorind([10,10,10]));
+
+from plasticity import AntiHebbian
+ns.initPlasticity(AntiHebbian)
+ns.runplot(1000, ns.monitorind([10,10,10]));
+
+from plasticity import Off
+ns.initPlasticity(Off)
+```
+With this code the striatal network runs for 1000 ms and then anti-Hebbian plasticity is turned on and the network runs for another 1000 ms and then plasticity is turned off. 
+
+
 
