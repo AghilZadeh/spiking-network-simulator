@@ -9,6 +9,12 @@ Generally, one can use any sort of connectivity matrix in this simulator. Additi
 
 The simulator outputs the selected neurons membrane potentials and spike times. Using these outputs, raster plots and other visuals can be plotted using incorporated functions. Several statistical measures can also be calculated by built-in functions.
 
+To see how this simulator is used in a research project, please refer to the last figure of our publication:
+
+[**Non-monotonic effects of GABAergic synaptic inputs on neuronal firing**][https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010226]
+A Abed Zadeh, BD Turner, N Calakos, N Brunel
+PLOS Computational Biology 18 (6), 2022
+
 ## Libraries
 
 This simulator consists of three libraries as follows:
