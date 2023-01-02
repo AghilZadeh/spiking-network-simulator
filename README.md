@@ -4,12 +4,16 @@
 
 This repository aims at introducing a spiking neural network simulator along with providing instructions on how to implement such networks.  With this simulator, one can build leaky integrate and fire (LIF) neural networks with realistic synaptic transmissions and desired neural structures and inputs. 
 
+This is a detailed biological model in which each neuron is represented by a variable (membrane potential). When the membrane potential of a pre-synaptic neuron crosses a threshold, it emits a spike that consequently creates a post-synaptic current that changes the post-synaptic mebrane potential. This is why it is called leaky integrate and fire, as the membrane potetial decays (leaks) to a rest potential, integrates incoming inputs and fires when it crosses the threshold.  
+
+<img src="https://user-images.githubusercontent.com/35585082/210263672-897a04e6-4f85-4b5b-a896-5b89c0b0942e.png" width="300" class="center">
+
 The simulator basically runs a giant dynamical system, with the dynamical variables representing membrane potentials of neurons. 
 Generally, one can use any sort of connectivity matrix in this simulator. Additionally, there are built-in functions that can construct multi-population networks by creating the appropriate connectivity matrices with given statistics. Moreover, any time-dependent input can be defined to feed into the network. Built-in functions are designed to construct random Poisson inputs with given statistics similar to those of cortex.
 
 The simulator outputs the selected neurons membrane potentials and spike times. Using these outputs, raster plots and other visuals can be plotted using incorporated functions. Several statistical measures can also be calculated by built-in functions.
 
-To see how this simulator is used in a research project, please refer to the last figure of our publication:
+To see how this simulator is used in a research project, please refer to the network simulation part of our publication:
 
 > [**Non-monotonic effects of GABAergic synaptic inputs on neuronal firing**](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010226)  
 A Abed Zadeh, BD Turner, N Calakos, N Brunel\
