@@ -23,7 +23,7 @@ PLOS Computational Biology 18 (6), 2022
 
 This simulator consists of three libraries as follows:
 
-1. **neurosimulator.py**: This library is the main module for dynamics of a neural network. It consists of codes for initializing a network, running the dynamics on that network, visualizing the output, and performing statistical analysis on the dynamics.
+1. **spiking.py**: This library is the main module for dynamics of a neural network. It consists of codes for initializing a network, running the dynamics on that network, visualizing the output, and performing statistical analysis on the dynamics.
 2. **populations.py**: This library consists of predefined populations to be used for neurosimulator. There exist single population and multi-population networks of striatum with inferred connectivity profiles from experimental literature.
 3. **plasticity.py**: Here online plasticity rules can be defined to be added to the network dynamics. A predefined anti-Hebbian rule is incorporated. With an online plasticity rule, connectivity weights of the network change depending on neural network activity such as pre-post neural firing rates.
 
@@ -31,8 +31,8 @@ This simulator consists of three libraries as follows:
 
 a network can be defined and run using few lines of code as simple as below:
 ```python
-import neurosimulator as ns
-from populations import Striatum
+import neurosimulator.spiking as ns
+from neurosimulator.populations import Striatum
 
 ns.initNetwork(Striatum)
 (SpikeTime, Spike, V) = rundynamics(endtime=1000, monitor_ind=[0,1,2,3])
@@ -47,16 +47,16 @@ Here, using **runplot()**, the simulator runs the network for 1000 ms, chooses 1
 
 One can turn on or off placticity rules at any stage of simulation. Here is a sample code on how plasticity can be incorporated in the model
 ```python
-import neurosimulator as ns
+import neurosimulator.spiking as ns
 from populations import Striatum
 ns.initNetwork(Striatum)
 ns.runplot(1000, ns.monitorind([10,10,10]));
 
-from plasticity import AntiHebbian
+from neurosimulator.plasticity import AntiHebbian
 ns.initPlasticity(AntiHebbian)
 ns.runplot(1000, ns.monitorind([10,10,10]));
 
-from plasticity import Off
+from neurosimulator.plasticity import Off
 ns.initPlasticity(Off)
 ```
 With this code the striatal network runs for 1000 ms and then anti-Hebbian plasticity is turned on and the network runs for another 1000 ms and then plasticity is turned off. 
