@@ -3,7 +3,7 @@
 
 #######################################  PLASTICITY RULES   #########################################
 import numpy as np
-import neurosimulator as ns
+import neurosimulator.spiking as ns
 import itertools
 
 
